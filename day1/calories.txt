@@ -1,5 +1,3 @@
-Puzzle inputs differ by user.  Please log in to get your puzzle input.
-
 10062
 15651
 1271
