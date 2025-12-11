@@ -1,3 +1,6 @@
+import logging
+
+
 def parse(file) -> list[str]:
     with open(file) as f:
         input = f.read().splitlines()
@@ -59,5 +62,5 @@ def part2(banks: list[str]) -> int:
     for batteries in banks:
         joltage = get_max_joltage_twelve(batteries)
         joltages.append(joltage)
-        print(batteries, joltage)
+        logging.debug(f"{batteries},{joltage}")
     return sum(joltages)

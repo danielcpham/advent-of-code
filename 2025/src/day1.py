@@ -55,10 +55,12 @@ def parse_rotation(rotation_str: str) -> Rotation:
 def parse_rotations(rotations) -> list[Rotation]:
     return [parse_rotation(rotation) for rotation in rotations]
 
-def parse(file:str) -> list[str]: 
+
+def parse(file: str) -> list[str]:
     with open(file) as f:
         input = f.read().splitlines()
     return input
+
 
 def part1(rotations: list[str]) -> int:
     position = 50

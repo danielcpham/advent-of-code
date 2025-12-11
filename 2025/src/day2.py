@@ -1,9 +1,12 @@
+import logging
+
 
 def parse(file):
     with open(file) as f:
-            input = f.readline()
-            ranges = parse_ranges(input)
+        input = f.readline()
+        ranges = parse_ranges(input)
     return ranges
+
 
 def parse_ranges(input: str) -> list[tuple[int, int]]:
     ranges = input.split(",")
@@ -47,5 +50,5 @@ def part2(ranges: list[tuple[int, int]]) -> int:
         for num in range(r[0], r[1] + 1):
             if is_repeated_sequence(str(num)):
                 invalid_nums.append(num)
-    print(invalid_nums)
+    logging.debug(invalid_nums)
     return sum(invalid_nums)

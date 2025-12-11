@@ -1,13 +1,12 @@
 from unittest import TestCase
-from src.day2 import parse_ranges, part1, part2
+from src.day2 import parse, part1, part2
 
 
 class TestDay1(TestCase):
     @classmethod
     def setUpClass(cls):
         with open("tests/inputs/test_day2.txt") as f:
-            input = f.readline()
-            cls.ranges = parse_ranges(input)
+            cls.ranges = parse("tests/inputs/test_day2.txt")
 
     def test_part1(self):
         self.assertEqual(part1(self.ranges), 1227775554)
