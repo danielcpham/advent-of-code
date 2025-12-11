@@ -1,11 +1,11 @@
 from unittest import TestCase
-from lib import parse_ranges, part1, part2
+from src.day2 import parse_ranges, part1, part2
 
 
 class TestDay1(TestCase):
     @classmethod
     def setUpClass(cls):
-        with open("tests/test.txt") as f:
+        with open("tests/inputs/test_day2.txt") as f:
             input = f.readline()
             cls.ranges = parse_ranges(input)
 

@@ -39,10 +39,11 @@ def rotate(start: int, rotation: Rotation) -> RotationOutput:
     num_flips, leftover = divmod(distance, 100)
     end = rotation.op(start, leftover)
     num_zeros = num_flips
-    print(f"{rotation.distance=}: {num_flips=}, {leftover=}, {end%100=}")
+    print(f"{rotation.distance=}: {num_flips=}, {leftover=}, {abs(end)%100=}")
+    print(end, end % 100)
     if start != 0 and not (0 < end < 100):
         num_zeros += 1
-    end = end % 100
+    end = abs(end) % 100
 
     return RotationOutput(end=end, num_zeros=num_zeros)
 
@@ -54,8 +55,12 @@ def parse_rotation(rotation_str: str) -> Rotation:
 def parse_rotations(rotations) -> list[Rotation]:
     return [parse_rotation(rotation) for rotation in rotations]
 
+def parse(file:str) -> list[str]: 
+    with open(file) as f:
+        input = f.read().splitlines()
+    return input
 
-def part1(rotations: list[Rotation]) -> int:
+def part1(rotations: list[str]) -> int:
     position = 50
     rotations = parse_rotations(rotations)
     num_zeros = 0

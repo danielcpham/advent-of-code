@@ -1,3 +1,10 @@
+
+def parse(file):
+    with open(file) as f:
+            input = f.readline()
+            ranges = parse_ranges(input)
+    return ranges
+
 def parse_ranges(input: str) -> list[tuple[int, int]]:
     ranges = input.split(",")
     parsed_ranges = [r.split("-") for r in ranges]

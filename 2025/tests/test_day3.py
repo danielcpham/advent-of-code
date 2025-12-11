@@ -1,11 +1,11 @@
 from unittest import TestCase
-from lib import part1, part2, parse
+from src.day3 import part1, part2, parse
 
 
 class TestDay3(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.input = parse("tests/test.txt")
+        cls.input = parse("tests/inputs/test_day3.txt")
 
     def test_part1(self):
         self.assertEqual(part1(self.input), 357)

@@ -1,4 +1,4 @@
-from rotations import part1, part2, rotate, parse_rotation
+from src.day1 import part1, part2, rotate, parse_rotation
 from typing import NamedTuple
 from unittest import TestCase
 
@@ -6,7 +6,7 @@ from unittest import TestCase
 class TestDay1(TestCase):
     @classmethod
     def setUpClass(cls):
-        with open("tests/test.txt") as f:
+        with open("tests/inputs/test_day1.txt") as f:
             cls.rotations = f.readlines()
 
     def test_part1(self):
