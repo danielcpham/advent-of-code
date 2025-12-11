@@ -1,7 +1,7 @@
 from src.rotations import part1, part2
 
+
 def main():
-    
     with open("input.txt") as f:
         rotations = f.readlines()
         part1(rotations)
