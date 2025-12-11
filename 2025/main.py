@@ -1,6 +1,6 @@
-from argparse import ArgumentParser
 import importlib
 import logging
+from argparse import ArgumentParser
 
 parser = ArgumentParser()
 parser.add_argument("day")

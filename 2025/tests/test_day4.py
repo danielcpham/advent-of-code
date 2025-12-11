@@ -1,5 +1,6 @@
 from unittest import TestCase
-from src.day4 import part1, part2, parse
+
+from src.day4 import parse, part1, part2
 
 
 class TestDay4(TestCase):

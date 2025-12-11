@@ -1,5 +1,7 @@
 from unittest import TestCase
-from src.day5 import part1, part2, parse
+
+from src.day5 import parse, part1, part2
+
 
 class TestDay5(TestCase):
     @classmethod

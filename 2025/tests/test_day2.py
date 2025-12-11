@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from src.day2 import parse, part1, part2
 
 

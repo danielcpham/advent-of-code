@@ -1,6 +1,7 @@
-from src.day1 import part1, part2, rotate, parse_rotation
 from typing import NamedTuple
 from unittest import TestCase
+
+from src.day1 import parse_rotation, part1, part2, rotate
 
 
 class TestDay1(TestCase):

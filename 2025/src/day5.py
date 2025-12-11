@@ -1,9 +1,12 @@
-from typing import NamedTuple
-import heapq 
+import heapq
 import logging
+from typing import NamedTuple
+
+
 class Input(NamedTuple):
     ranges: list[tuple[int, int]]
     ingredients: list[int]
+
 
 def parse(filename: str) -> Input:
     with open(filename) as f:
@@ -16,11 +19,13 @@ def parse(filename: str) -> Input:
     ingredients = [int(i) for i in parts[1].split("\n")]
     return Input(ranges, ingredients)
 
+
 def part1(input: Input) -> int:
     num_fresh = 0
     for ingredient in input.ingredients:
-        num_fresh += int(any(r[0]<=ingredient <=r[1] for r in input.ranges))
+        num_fresh += int(any(r[0] <= ingredient <= r[1] for r in input.ranges))
     return num_fresh
+
 
 def part2(input: Input) -> int:
     ranges = sorted(input.ranges)
@@ -40,7 +45,6 @@ def part2(input: Input) -> int:
             heapq.heappush_max(combined_ranges, r)
         logging.debug(f"ranges: {combined_ranges}")
 
-        
     total_fresh_ids = 0
     for r in combined_ranges:
         total_fresh_ids += r[1] - r[0] + 1
