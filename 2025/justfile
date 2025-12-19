@@ -1,0 +1,17 @@
+set dotenv-load
+
+create day:
+	uv run main.py download --day {{day}}
+	uv run pytest tests/ --log-cli-level=DEBUG
+
+test-all:
+	uv run pytest tests/ --log-cli-level=DEBUG
+test day:
+	uv run pytest tests/test_day{{day}}.py --log-cli-level=DEBUG
+
+format-all:
+	uv tool run ruff format src/ tests/
+	uv tool run ruff check --select I --fix src/ tests/
+format day:
+	uv tool run ruff format src/day{{day}}.py tests/test_day{{day}}.py
+	uv tool run ruff check --select I --fix src/day{{day}}.py tests/test_day{{day}}.py

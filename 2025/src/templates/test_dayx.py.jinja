@@ -1,0 +1,13 @@
+from unittest import TestCase
+
+from src.day{{day}} import parse, part1, part2
+class TestDay{{day}}(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.input = parse("tests/inputs/test_day{{day}}.txt")
+
+    def test_part1(self):
+        self.assertEqual(part1(self.input), 0)
+
+    def test_part2(self):
+        self.assertEqual(part2(self.input), 0)

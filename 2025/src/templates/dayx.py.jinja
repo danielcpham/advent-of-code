@@ -1,0 +1,20 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class Input:
+    pass
+
+
+def parse(filename: str) -> Input:
+    with open(filename) as f:
+        input = f.read()
+    return input
+
+
+def part1(input: Input) -> int:
+    pass
+
+
+def part2(input: Input) -> int:
+    pass
